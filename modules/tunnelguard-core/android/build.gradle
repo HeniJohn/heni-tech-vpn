@@ -16,23 +16,6 @@ android {
   }
 }
 
-dependencies {
-  // The verified AAR is an external Ivy artifact, not a direct local AAR. This
-  // allows Android Gradle Plugin to package this Expo library for cloud builds.
-  implementation("com.henitech.vpn:libbox:1.13.18@aar")
-}
-
-repositories {
-  ivy {
-    url = uri("https://github.com/HeniJohn/Apk/releases/download/native-core-v1.13.18/")
-    patternLayout {
-      artifact("[artifact].[ext]")
-    }
-    metadataSources {
-      artifact()
-    }
-    content {
-      includeModule("com.henitech.vpn", "libbox")
-    }
-  }
-}
+// The current clean-source bridge owns the Android VpnService lifecycle locally.
+// Protocol-specific native cores are added only after their audited artifacts are
+// available; no nonexistent or placeholder libbox dependency is required to build.
