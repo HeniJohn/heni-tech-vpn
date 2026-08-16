@@ -1,0 +1,38 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'expo.modules.tunnelguardcore'
+version = '1.0.0'
+
+android {
+  namespace "expo.modules.tunnelguardcore"
+  compileSdkVersion 35
+  defaultConfig {
+    minSdkVersion 24
+    versionCode 1
+    versionName "1.0.0"
+  }
+}
+
+dependencies {
+  // The verified AAR is an external Ivy artifact, not a direct local AAR. This
+  // allows Android Gradle Plugin to package this Expo library for cloud builds.
+  implementation("com.henitech.vpn:libbox:1.13.18@aar")
+}
+
+repositories {
+  ivy {
+    url = uri("https://github.com/HeniJohn/Apk/releases/download/native-core-v1.13.18/")
+    patternLayout {
+      artifact("[artifact].[ext]")
+    }
+    metadataSources {
+      artifact()
+    }
+    content {
+      includeModule("com.henitech.vpn", "libbox")
+    }
+  }
+}
