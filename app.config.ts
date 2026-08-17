@@ -85,6 +85,7 @@ const config: ExpoConfig = {
     favicon: "./assets/images/favicon.png",
   },
   plugins: [
+    "./scripts/with-heni-android-packaging.cjs",
     "expo-router",
     [
       "expo-audio",
