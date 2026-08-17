@@ -1,0 +1,28 @@
+# Project TODO
+
+- [x] Reference-parity behavior specification for Welcome, Home, Logs, Payload Generator, Profiles, Import/Export, Settings, About, and Diagnostics
+- [x] Independent six-mode profile model: SSH Direct, HTTP Proxy, SSL Tunnel, SSL + Proxy, SSL + HTTP, SlowDNS
+- [x] Manual server/profile entry with no bundled VPS or random server list
+- [x] Heni Tech VPN dark navy/electric-blue interface and branded welcome flow
+- [x] Home connection state, elapsed time, traffic counters, profile summary, and connect/disconnect actions
+- [x] Payload Generator with preset/custom payload editing and apply flow
+- [x] Local `.htv` import/export with validation, expiry/protection metadata, and secret redaction
+- [x] Connection Logs with readable lifecycle events and secret redaction
+- [x] About screen with Heni Tech VPN, Heni John, and Telegram links only in About
+- [x] Independent native Android VpnService lifecycle boundary
+- [ ] SSH Direct adapter with verified connection lifecycle
+- [ ] HTTP Proxy adapter with verified connection lifecycle
+- [ ] SSL Tunnel adapter with verified TLS/payload lifecycle
+- [ ] SSL + Proxy adapter with verified proxy/TLS/payload lifecycle
+- [ ] SSL + HTTP adapter with verified HTTP payload lifecycle
+- [ ] SlowDNS adapter with verified DNS-tunnel lifecycle
+- [x] Android permission, foreground notification, cleanup, and false-connected-state protections
+- [x] Unit and integration tests for profile validation, payload generation, import/export, logs, and adapter state transitions
+- [ ] Visual and functional comparison against the supplied reference APK
+- [x] Fix preview TransformError/service runtime issue before visual verification
+- [ ] Remote Android APK build and install verification
+- [x] Validate SSH Direct transport reachability against user-provided host `ssh.ethiodragon.sbs` on port `80` without storing credentials
+- [ ] Complete source-level SSH Direct adapter integration for the user-provided SSH endpoint without storing credentials
+- [ ] Complete source-level HTTP Proxy, SSL Tunnel, SSL + Proxy, SSL + HTTP, and SlowDNS adapter integration or clearly preserve explicit pending errors where protocol details cannot be verified
+- [ ] Run the independent remote APK workflow on the final source commit
+- [ ] Deliver the test APK and exact phone installation/test steps
